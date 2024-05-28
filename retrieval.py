@@ -41,7 +41,7 @@ async def qa_llm(db: Chroma, query: str):
     ]
     retrieval_result = db.max_marginal_relevance_search(query=query, k=3)
     llm = ChatOllama(name="BTW", model="llama3-Chinese", num_ctx=8192, stop=stop)
-    print(Fore.YELLOW + str(retrieval_result) + Style.RESET_ALL)
+    # print(Fore.YELLOW + str(retrieval_result) + Style.RESET_ALL)
     prompt = ChatPromptTemplate.from_messages(
         [
             (
